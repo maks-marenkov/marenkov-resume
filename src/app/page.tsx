@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  Cpu, 
-  Database, 
-  Shield, 
-  Phone, 
-  Mail, 
-  MapPin, 
+import {
+  Cpu,
+  Send,
+  Database,
+  Shield,
+  Phone,
+  Mail,
+  MapPin,
   ChevronRight,
   Zap,
   Network,
@@ -18,15 +19,13 @@ import {
 import Scene from "@/components/ServerCore";
 import TypewriterEffect from "@/components/TypewriterEffect";
 
-// --- [DATA: SKILLS] ---
 const skills = [
-  "Linux (Debian/Ubuntu)", "Docker & Containerization", "Ansible Automation", 
-  "Zabbix / Prometheus", "Cisco CCNA", "MikroTik RouterOS", 
-  "Python Scripting", "Bash", "Git / GitLab CI", 
+  "Linux (Debian/Ubuntu)", "Docker & Containerization", "Ansible Automation",
+  "Zabbix / Prometheus", "Cisco CCNA", "MikroTik RouterOS",
+  "Python Scripting", "Bash", "Git / GitLab CI",
   "Proxmox VE", "FreeIPA", "Huawei Enterprise"
 ];
 
-// --- [DATA: ACHIEVEMENTS] ---
 const achievements = [
   {
     title: "Оптимизация сети",
@@ -45,7 +44,6 @@ const achievements = [
   }
 ];
 
-// --- [DATA: EXPERIENCE] ---
 const experience = [
   {
     company: "ООО 'СитиТелеком'",
@@ -70,7 +68,6 @@ const experience = [
   }
 ];
 
-// --- [DATA: CONFERENCES] ---
 const conferences = [
   {
     name: "Open IT LAB",
@@ -80,7 +77,6 @@ const conferences = [
   }
 ];
 
-// --- [DATA: EDUCATION] ---
 const education = [
   {
     institution: "Московский технологический институт",
@@ -120,7 +116,6 @@ export default function Home() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 py-16 md:py-32 space-y-32">
         
-        {/* --- [SECTION: HERO] --- */}
         <section className="min-h-[70vh] flex flex-col justify-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -154,7 +149,6 @@ export default function Home() {
           </motion.div>
         </section>
 
-        {/* --- [SECTION: ACHIEVEMENTS] --- */}
         <section>
           <div className="flex items-center gap-3 mb-10 text-emerald-400 border-b border-emerald-900 pb-2 w-fit">
             <Zap size={20} />
@@ -179,7 +173,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- [SECTION: SKILLS] --- */}
         <section>
           <div className="flex items-center gap-3 mb-10 text-emerald-400 border-b border-emerald-900 pb-2 w-fit">
             <Cpu size={20} />
@@ -203,7 +196,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- [SECTION: EXPERIENCE] --- */}
         <section id="experience">
           <div className="flex items-center gap-3 mb-10 text-emerald-400 border-b border-emerald-900 pb-2 w-fit">
             <Database size={20} />
@@ -241,7 +233,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- [SECTION: EDUCATION] --- */}
         <section>
           <div className="flex items-center gap-3 mb-10 text-emerald-400 border-b border-emerald-900 pb-2 w-fit">
             <GraduationCap size={20} />
@@ -276,7 +267,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- [SECTION: CONFERENCES] --- */}
         <section>
           <div className="flex items-center gap-3 mb-10 text-emerald-400 border-b border-emerald-900 pb-2 w-fit">
             <Network size={20} />
@@ -307,41 +297,55 @@ export default function Home() {
           </div>
         </section>
 
-        {/* --- [SECTION: CONTACTS] --- */}
         <section className="pb-32">
-          <div className="border border-emerald-500/20 bg-emerald-500/5 p-12 backdrop-blur-xl text-center relative overflow-hidden group">
-            <h2 className="text-3xl font-bold text-white mb-12 tracking-tighter uppercase font-mono">Establish Connection</h2>
+          <div className="border border-emerald-500/20 bg-emerald-500/5 p-8 md:p-12 backdrop-blur-xl relative overflow-hidden group">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-emerald-500 to-transparent opacity-30" />
             
-            <div className="grid md:grid-cols-2 gap-12 max-w-2xl mx-auto">
-              <a href="tel:+79385283022" className="group flex flex-col items-center gap-4">
-                <div className="p-4 rounded-full border border-emerald-900 group-hover:border-emerald-500 transition-colors">
-                  <Phone className="text-emerald-500" />
+            <h2 className="text-3xl font-bold text-white text-center mb-12 tracking-tighter uppercase font-mono">
+              Establish Connection
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+              <a href="tel:+79385283022" className="group flex flex-col items-center gap-4 p-6 border border-emerald-900/30 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all duration-300">
+                <div className="p-3 rounded-full bg-emerald-950/20 text-emerald-500 group-hover:scale-110 transition-transform">
+                  <Phone size={24} />
                 </div>
-                <span className="text-slate-300 font-mono">+7 (938) 528-30-22</span>
+                <span className="text-slate-300 font-mono text-sm">+7 (938) 528-30-22</span>
               </a>
-              <a href="mailto:m.maks1240@gmail.com" className="group flex flex-col items-center gap-4">
-                <div className="p-4 rounded-full border border-emerald-900 group-hover:border-emerald-500 transition-colors">
-                  <Mail className="text-emerald-500" />
+
+              <a 
+                href="https://t.me/maks_marenkov" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex flex-col items-center gap-4 p-6 border border-emerald-900/30 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all duration-300"
+              >
+                <div className="p-3 rounded-full bg-emerald-950/20 text-emerald-500 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(16,185,129,0)] group-hover:shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                  <Send size={24} />
                 </div>
-                <span className="text-slate-300 font-mono">m.maks1240@gmail.com</span>
+                <span className="text-slate-300 font-mono text-sm tracking-tight">@maks_marenkov</span>
+              </a>
+
+              <a href="mailto:m.maks1240@gmail.com" className="group flex flex-col items-center gap-4 p-6 border border-emerald-900/30 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all duration-300">
+                <div className="p-3 rounded-full bg-emerald-950/20 text-emerald-500 group-hover:scale-110 transition-transform">
+                  <Mail size={24} />
+                </div>
+                <span className="text-slate-300 font-mono text-sm truncate w-full text-center">m.maks1240@gmail.com</span>
               </a>
             </div>
 
-            <div className="mt-16 pt-8 border-t border-emerald-900/30">
-               <motion.a 
+            <div className="mt-16 pt-8 border-t border-emerald-900/30 text-center">
+              <motion.a 
                 href="https://github.com/maks-marenkov"
                 target="_blank"
-                className="text-[10px] text-emerald-900 hover:text-emerald-400 transition-colors tracking-[0.5em] font-bold"
+                className="text-[10px] text-emerald-900 hover:text-emerald-400 transition-colors tracking-[0.5em] font-bold uppercase"
               >
                 GITHUB://MAKS-MARENKOV
               </motion.a>
             </div>
           </div>
         </section>
-
       </div>
       
-      {/* Пленочный шум поверх всего контента */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.02] z-50 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
     </main>
   );
